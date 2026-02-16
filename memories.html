@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémoires · Imsfrane Cathédrale</title>
+    
+    <!-- META TAGS -->
+    <meta name="description" content="Vidéos et moments capturés à Imsfrane Cathédrale : aventures en VTT, rafting, camping et paysages de l'Atlas.">
+    <meta name="keywords" content="Imsfrane, Cathédrale, vidéos, reels, rafting, VTT, camping, Atlas">
+    <meta name="author" content="Imsfrane Cathédrale">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* ===== STYLES SPÉCIFIQUES À LA PAGE MÉMOIRES ===== */
+        .memories-hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        
+        .memories-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .memories-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+            transition: transform 10s ease;
+        }
+        
+        .memories-hero:hover .memories-hero-bg img {
+            transform: scale(1.1);
+        }
+        
+        .memories-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 2;
+        }
+        
+        .memories-hero-content {
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .memories-hero-content h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .memories-hero-content p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== SECTION VIDÉOS REELS ===== */
+        .reels-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .reels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .reel-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(198,164,63,0.1);
+            height: fit-content;
+        }
+        
+        .reel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--gold);
+        }
+        
+        .reel-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9/16; /* Format Reel */
+            background: #000;
+            overflow: hidden;
+        }
+        
+        /* Style pour l'embed Instagram */
+        .reel-container iframe,
+        .reel-container blockquote {
+            width: 100% !important;
+            height: 100% !important;
+            min-width: auto !important;
+            border: none !important;
+        }
+        
+        .reel-info {
+            padding: 20px;
+        }
+        
+        .reel-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-family: var(--font-serif);
+        }
+        
+        .reel-info p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .reel-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--gold);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+        
+        .reel-meta i {
+            margin-right: 5px;
+        }
+        
+        /* ===== SECTION VIDÉO MISE EN AVANT (optionnelle) ===== */
+        .featured-video {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .video-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .video-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+        
+        .video-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .video-stat {
+            text-align: center;
+        }
+        
+        .video-stat-number {
+            display: block;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--gold);
+            font-family: var(--font-serif);
+        }
+        
+        .video-stat-label {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+        
+        .video-placeholder {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            cursor: pointer;
+        }
+        
+        .video-placeholder img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s;
+        }
+        
+        .video-placeholder:hover img {
+            transform: scale(1.05);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(198,164,63,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .video-placeholder:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--gold);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .memories-hero-content h1 {
+                font-size: 48px;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .video-content {
+                text-align: center;
+            }
+            
+            .video-stats {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .memories-hero-content h1 {
+                font-size: 42px;
+            }
+            
+            .reels-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+            
+            .video-placeholder img {
+                height: 250px;
+            }
+            
+            .play-button {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .reels-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .memories-hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .memories-hero-content p {
+                font-size: 16px;
+            }
+            
+            .video-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/212667772551" class="floating-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:0667772551" class="floating-btn phone"><i class="fas fa-phone-alt"></i></a>
+        <a href="booking.html" class="floating-btn booking"><i class="fas fa-calendar-check"></i></a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.jpeg" alt="Imsfrane Cathédrale">
+                    <span class="logo-title">Imsfrane Cathédrale</span>
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="index.html">Accueil</a>
+                    <a href="activities.html">Activités</a>
+                    <a href="memories.html" class="active">Mémoires</a>
+                    <a href="guide.html">Guide</a>
+                    <a href="booking.html">Réservation</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="tel:0667772551" class="nav-phone"><i class="fas fa-phone-alt"></i></a>
+                    <button class="search-toggle" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Popup -->
+    <div class="search-popup" id="searchPopup">
+        <div class="search-popup-content">
+            <div class="search-popup-header">
+                <h3>Rechercher une activité</h3>
+                <button class="search-popup-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-popup-body">
+                <input type="text" class="search-popup-input" id="popupSearch" placeholder="Camping, Rafting, VTT, Randonnée...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-backdrop"></div>
+        <div class="menu-panel">
+            <div class="menu-header">
+                <img src="images/logo.jpeg" alt="Imsfrane">
+                <button class="menu-close" id="menuClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="menu-content">
+                <a href="index.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-home"></i></div>
+                    <span>Accueil</span>
+                </a>
+                <a href="activities.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-hiking"></i></div>
+                    <span>Activités</span>
+                </a>
+                <a href="memories.html" class="menu-item active">
+                    <div class="item-icon"><i class="fas fa-camera-retro"></i></div>
+                    <span>Mémoires</span>
+                </a>
+                <a href="guide.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <span>Guide</span>
+                </a>
+                <a href="booking.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-calendar-check"></i></div>
+                    <span>Réservation</span>
+                </a>
+                <a href="contact.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-envelope"></i></div>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memories Hero -->
+    <section class="memories-hero">
+        <div class="memories-hero-bg">
+            <img src="images/hero.jpeg" alt="Imsfrane Cathédrale">
+            <div class="memories-hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="memories-hero-content">
+                <span class="section-badge">MÉMOIRES</span>
+                <h1>Nos souvenirs en vidéo</h1>
+                <p>Revivez les moments forts de l'Atlas à travers nos Reels</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reels Section -->
+    <section class="reels-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">NOS RÉELS</span>
+                <h2 class="section-title">Moments <span class="text-gold">authentiques</span></h2>
+                <p class="section-subtitle">Des instants capturés en vidéo au cœur de l'Atlas</p>
+            </div>
+            
+            <div class="reels-grid" id="reelsGrid">
+                <!-- Reel 1: Randonnée et nature -->
+                <div class="reel-card">
+                    <div class="reel-container">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DLsXZSMNzdC/?igsh=MTN2OHowM3ByYW13aA==" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="reel-info">
+                        <h3>❄️ Ambiance hivernale à Imsfrane</h3>
+                        <p>L'Atlas sous la neige, un spectacle à couper le souffle. Une journée magique au sommet.</p>
+                        <div class="reel-meta">
+                            <span><i class="far fa-calendar"></i> Janvier 2026</span>
+                            <span><i class="fas fa-mountain"></i> Neige</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reel 2: Oued Ahansal et pont Tilouguite -->
+                <div class="reel-card">
+                    <div class="reel-container">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DJwe47EMc0D/?igsh=MWExd2RvcXFqNnZ5Yw==" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="reel-info">
+                        <h3>💧 Oued Ahansal</h3>
+                        <p>Eau claire et rafraîchissante, idéale pour la baignade. Le pont de Tilouguite en toile de fond.</p>
+                        <div class="reel-meta">
+                            <span><i class="far fa-calendar"></i> Été 2025</span>
+                            <span><i class="fas fa-water"></i> Baignade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reel 3: Tente camping 2 personnes -->
+                <div class="reel-card">
+                    <div class="reel-container">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DK4ALd7N-OR/?igsh=MWFzY2hzeTNjNTY2OA==" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="reel-info">
+                        <h3>🏕️ Camping sauvage</h3>
+                        <p>Installation de notre tente pour deux personnes. Une nuit authentique au bord de l'oued.</p>
+                        <div class="reel-meta">
+                            <span><i class="far fa-calendar"></i> Juin 2025</span>
+                            <span><i class="fas fa-campground"></i> Camping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reel 4: Rafting niveau 5/6 -->
+                <div class="reel-card">
+                    <div class="reel-container">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUMISBRDGtb/?igsh=ZHQzN3VyaDNnaHg0" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="reel-info">
+                        <h3>🌊 Rafting extrême</h3>
+                        <p>Descente de l'Oued Ahansal en niveau 5/6. Adrénaline et sensations fortes garanties !</p>
+                        <div class="reel-meta">
+                            <span><i class="far fa-calendar"></i> Janvier 2026</span>
+                            <span><i class="fas fa-water"></i> Rafting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reel 5: Neige à Imsfrane -->
+                <div class="reel-card">
+                    <div class="reel-container">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DT5ebFKjPiY/?igsh=Nm14ejRrNHRzZjBn" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="reel-info">
+                        <h3>⛄ Jour de neige</h3>
+                        <p>Ambiance féérique à Imsfrane sous la neige. Un moment de pure magie hivernale.</p>
+                        <div class="reel-meta">
+                            <span><i class="far fa-calendar"></i> Janvier 2026</span>
+                            <span><i class="fas fa-snowflake"></i> Neige</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reel 6: VTT à Imsfrane -->
+                <div class="reel-card">
+                    <div class="reel-container">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DS7222tjLyK/?igsh=ODF3cTFnNHF0ZHo0" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="reel-info">
+                        <h3>🚵 VTT Exploration</h3>
+                        <p>Descente en VTT sur les sentiers d'Imsfrane. Une vue imprenable sur la Cathédrale.</p>
+                        <div class="reel-meta">
+                            <span><i class="far fa-calendar"></i> Décembre 2025</span>
+                            <span><i class="fas fa-bicycle"></i> VTT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Instagram CTA (optionnelle) -->
+    <section class="featured-video">
+        <div class="container">
+            <div class="video-grid">
+                <div class="video-content">
+                    <span class="section-badge">INSTAGRAM</span>
+                    <h2>Suivez notre aventure</h2>
+                    <p>
+                        Pour plus de vidéos et de moments authentiques, rejoignez-nous sur Instagram. 
+                        Découvrez les coulisses de nos expéditions, les paysages à couper le souffle 
+                        et partagez la passion de l'Atlas avec notre communauté.
+                    </p>
+                    <div class="video-stats">
+                        <div class="video-stat">
+                            <span class="video-stat-number">15K+</span>
+                            <span class="video-stat-label">abonnés</span>
+                        </div>
+                        <div class="video-stat">
+                            <span class="video-stat-number">500+</span>
+                            <span class="video-stat-label">publications</span>
+                        </div>
+                        <div class="video-stat">
+                            <span class="video-stat-number">4.9</span>
+                            <span class="video-stat-label">⭐ avis</span>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/imsfrane_cathedrale" target="_blank" class="btn btn-gold">
+                        <i class="fab fa-instagram"></i> @imsfrane_cathedrale
+                    </a>
+                </div>
+                <div class="video-placeholder" onclick="window.open('https://www.instagram.com/imsfrane_cathedrale', '_blank')">
+                    <img src="images/hero.jpeg" alt="Instagram Imsfrane">
+                    <div class="play-button">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-founder">
+                <div class="founder-highlight">
+                    <div class="founder-image-large">
+                        <img src="images/logo.jpeg" alt="Imsfrane Cathédrale">
+                    </div>
+                    <div class="founder-info-premium">
+                        <span class="founder-tag">À PROPOS</span>
+                        <h2 class="founder-name">Imsfrane Cathédrale</h2>
+                        <p class="founder-desc">
+                            Découvrez la magie de l'Atlas à travers des expériences uniques et authentiques.
+                            Notre équipe de guides locaux vous accompagne pour des aventures inoubliables.
+                        </p>
+                        
+                        <div class="founder-stats-premium">
+                            <div class="stat-item">
+                                <span class="stat-number">+500</span>
+                                <span class="stat-label">Aventuriers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">8 ans</span>
+                                <span class="stat-label">d'expérience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">⭐ 4.9</span>
+                                <span class="stat-label">Avis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="founder-social-premium">
+                            <a href="https://www.instagram.com/imsfrane_cathedrale" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1BRARgWsKv/" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@imsfrane_cathedrale" target="_blank" class="social-icon tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://wa.me/212667772551" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom-premium">
+                <div class="footer-brand">
+                    <img src="images/logo.jpeg" alt="Imsfrane" class="footer-logo">
+                    <div class="footer-brand-text">
+                        <h3>Imsfrane Cathédrale</h3>
+                        <p>Montagne Sacrée de l'Atlas · 1 868m</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links-premium">
+                    <a href="index.html">Accueil</a>
+                    <a href="activities.html">Activités</a>
+                    <a href="memories.html">Mémoires</a>
+                    <a href="guide.html">Guide</a>
+                    <a href="booking.html">Réservation</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-contact-premium">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:0667772551">06 67 77 25 51</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/212667772551">WhatsApp</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Imsfrane Tilouguite, Azilal</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <span class="rib-text">RIB: 022780000760004191778274</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>© 2026 Imsfrane Cathédrale · Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script pour Instagram Embed -->
+    <script async src="//www.instagram.com/embed.js"></script>
+    
+    <script>
+        // Search Popup
+        document.getElementById('searchToggle').addEventListener('click', function() {
+            document.getElementById('searchPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        document.getElementById('searchClose').addEventListener('click', function() {
+            document.getElementById('searchPopup').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Mobile Menu
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        document.getElementById('menuClose').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        document.querySelector('.menu-backdrop').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+</body>
+</html>
