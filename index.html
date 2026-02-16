@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imsfrane Cathédrale · Sommet Sacré de l'Atlas</title>
+    
+    <!-- META TAGS -->
+    <meta name="description" content="Imsfrane Cathédrale - Montagne légendaire de l'Atlas marocain à 1,868m. Randonnées, camping étoilé, VTT, rafting.">
+    <meta name="keywords" content="Imsfrane, Cathédrale, montagne, Atlas, Azilal, randonnée, camping, VTT, rafting, Maroc">
+    <meta name="author" content="Imsfrane Cathédrale">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+    
+    <!-- FONTS & CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/212667772551" class="floating-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:0667772551" class="floating-btn phone"><i class="fas fa-phone-alt"></i></a>
+        <a href="booking.html" class="floating-btn booking"><i class="fas fa-calendar-check"></i></a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.jpeg" alt="Imsfrane Cathédrale">
+                    <span class="logo-title">Imsfrane Cathédrale</span>
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="index.html" class="active">Accueil</a>
+                    <a href="activities.html">Activités</a>
+                    <a href="memories.html">Mémoires</a>
+                    <a href="guide.html">Guide</a>
+                    <a href="booking.html">Réservation</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="tel:0667772551" class="nav-phone"><i class="fas fa-phone-alt"></i></a>
+                    <button class="search-toggle" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Popup -->
+    <div class="search-popup" id="searchPopup">
+        <div class="search-popup-content">
+            <div class="search-popup-header">
+                <h3>Rechercher une activité</h3>
+                <button class="search-popup-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-popup-body">
+                <input type="text" class="search-popup-input" id="popupSearch" placeholder="Camping, Rafting, VTT, Randonnée...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-backdrop"></div>
+        <div class="menu-panel">
+            <div class="menu-header">
+                <img src="images/logo.jpeg" alt="Imsfrane">
+                <button class="menu-close" id="menuClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="menu-content">
+                <a href="index.html" class="menu-item active">
+                    <div class="item-icon"><i class="fas fa-home"></i></div>
+                    <span>Accueil</span>
+                </a>
+                <a href="activities.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-hiking"></i></div>
+                    <span>Activités</span>
+                </a>
+                <a href="memories.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-camera-retro"></i></div>
+                    <span>Mémoires</span>
+                </a>
+                <a href="guide.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <span>Guide</span>
+                </a>
+                <a href="booking.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-calendar-check"></i></div>
+                    <span>Réservation</span>
+                </a>
+                <a href="contact.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-envelope"></i></div>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="images/hero.jpeg" alt="Imsfrane Cathédrale" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-line"></span>
+                <span class="badge-text">ATLAS MAROCAIN</span>
+                <span class="badge-line"></span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="hero-title-small">Imsfrane</span>
+                <span class="hero-title-large">Cathédrale</span>
+            </h1>
+            
+            <div class="hero-altitude">
+                <div class="altitude-card">
+                    <span class="altitude-number">1 868m</span>
+                    <span class="altitude-label">Sommet Sacré</span>
+                </div>
+            </div>
+            
+            <p class="hero-description">
+                Là où le ciel embrasse la pierre et où le silence raconte l'histoire millénaire de l'Atlas.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="activities.html" class="btn btn-gold">
+                    <span>Explorer les activités</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="memories.html" class="btn btn-outline">
+                    <span>Voir les mémoires</span>
+                    <i class="fas fa-camera-retro"></i>
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">1 868m</span>
+                    <span class="stat-label">Altitude</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Sentiers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Accès</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">★ 4.9</span>
+                    <span class="stat-label">Avis</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <span>Découvrir</span>
+            <div class="scroll-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-bar container">
+        <div style="position: relative;">
+            <input type="text" class="search-input" id="globalSearch" placeholder="Rechercher une activité... (Camping, Rafting, VTT...)">
+            <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+    <!-- Activities Slider -->
+    <section class="activities-slider">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">NOS ACTIVITÉS</span>
+                <h2 class="section-title">Vivez l'<span class="text-gold">aventure</span></h2>
+                <p class="section-subtitle">Des expériences uniques au cœur de l'Atlas</p>
+            </div>
+        </div>
+        
+        <div class="slider-container">
+            <button class="slider-btn prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-track" id="sliderTrack"></div>
+            <button class="slider-btn next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Legend Section -->
+    <section class="legend">
+        <div class="container">
+            <div class="legend-grid">
+                <div class="legend-content">
+                    <span class="section-badge">LA CATHÉDRALE</span>
+                    <h2 class="section-title">Une nature <span class="text-gold">authentique</span></h2>
+                    <p class="legend-text">
+                        La Cathédrale d'Imsfrane est une destination naturelle unique au cœur du Haut Atlas,
+                        où le calme rencontre l'aventure. Un lieu idéal pour le camping et les expériences en pleine nature.
+                    </p>
+                    <div class="legend-quote">
+                        <i class="fas fa-quote-right"></i>
+                        <p>« Là où le ciel embrasse la pierre »</p>
+                        <span>— Esprit de l'Atlas</span>
+                    </div>
+                </div>
+                <div class="legend-image">
+                    <img src="images/hero.jpeg" alt="Montagne Cathédrale">
+                    <div class="legend-caption"><i class="fas fa-mountain"></i> Une expérience en pleine nature</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">POURQUOI NOUS</span>
+                <h2 class="section-title">Une expérience <span class="text-gold">authentique</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mountain"></i></div>
+                    <h3>Guides berbères</h3>
+                    <p>Des guides natifs de la vallée</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Écotourisme</h3>
+                    <p>Respect de l'environnement</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Authenticité</h3>
+                    <p>Immersion totale</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-star"></i></div>
+                    <h3>Excellence</h3>
+                    <p>4.9/5 sur 156 avis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auto Slider -->
+    <section class="auto-slider">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">NOS INCONTOURNABLES</span>
+                <h2 class="section-title">Vivez la <span class="text-gold">Cathédrale</span></h2>
+                <p class="section-subtitle">Des expériences uniques au sommet de l'Atlas</p>
+            </div>
+        </div>
+        
+        <div class="auto-slider-wrapper">
+            <div class="auto-slider-track">
+                <!-- Camping -->
+                <div class="slide-card">
+                    <img src="images/camping.jpeg" alt="Camping">
+                    <h3>Camping sauvage</h3>
+                    <p>Nuit sous les étoiles</p>
+                    <div class="price">60 DH</div>
+                    <a href="activities.html#camping">Découvrir →</a>
+                </div>
+                
+                <!-- Randonnée -->
+                <div class="slide-card">
+                    <img src="images/hiking.jpeg" alt="Randonnée">
+                    <h3>Randonnée</h3>
+                    <p>Sommet 1868m</p>
+                    <div class="price">300 DH</div>
+                    <a href="activities.html#randonnee">Découvrir →</a>
+                </div>
+                
+                <!-- VTT -->
+                <div class="slide-card">
+                    <img src="images/vtt.jpeg" alt="VTT">
+                    <h3>VTT</h3>
+                    <p>Double suspension</p>
+                    <div class="price">150 DH</div>
+                    <a href="activities.html#vtt">Découvrir →</a>
+                </div>
+                
+                <!-- Rafting -->
+                <div class="slide-card">
+                    <img src="images/rafting.png" alt="Rafting">
+                    <h3>Rafting</h3>
+                    <p>Oued Ahansal</p>
+                    <div class="price">400 DH</div>
+                    <a href="activities.html#rafting">Découvrir →</a>
+                </div>
+                
+                <!-- Guide -->
+                <div class="slide-card">
+                    <img src="images/farid.jpeg" alt="Guide">
+                    <h3>Guide</h3>
+                    <p>8 ans d'expérience</p>
+                    <div class="price">Inclus</div>
+                    <a href="guide.html">Découvrir →</a>
+                </div>
+                
+                <!-- Camping (duplicate) -->
+                <div class="slide-card">
+                    <img src="images/camping.jpeg" alt="Camping">
+                    <h3>Camping sauvage</h3>
+                    <p>Nuit sous les étoiles</p>
+                    <div class="price">60 DH</div>
+                    <a href="activities.html#camping">Découvrir →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="preview-cta">
+                <a href="activities.html" class="btn btn-gold">Toutes nos activités →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">TÉMOIGNAGES</span>
+                <h2 class="section-title">Ils ont gravi la <span class="text-gold">Cathédrale</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Une expérience inoubliable au cœur de l'Atlas."</p>
+                    <div class="testimonial-author">
+                        <strong>Marie L.</strong>
+                        <span>Juin 2026</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Le camping étoilé est magique, un silence incroyable."</p>
+                    <div class="testimonial-author">
+                        <strong>Karim B.</strong>
+                        <span>Mai 2026</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Rafting incroyable, des sensations fortes garanties."</p>
+                    <div class="testimonial-author">
+                        <strong>Sophie D.</strong>
+                        <span>Juillet 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-founder">
+                <div class="founder-highlight">
+                    <div class="founder-image-large">
+                        <img src="images/logo.jpeg" alt="Imsfrane Cathédrale">
+                    </div>
+                    <div class="founder-info-premium">
+                        <span class="founder-tag">À PROPOS</span>
+                        <h2 class="founder-name">Imsfrane Cathédrale</h2>
+                        <p class="founder-desc">
+                            Découvrez la magie de l'Atlas à travers des expériences uniques et authentiques.
+                            Notre équipe de guides locaux vous accompagne pour des aventures inoubliables.
+                        </p>
+                        
+                        <div class="founder-stats-premium">
+                            <div class="stat-item">
+                                <span class="stat-number">+500</span>
+                                <span class="stat-label">Aventuriers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">8 ans</span>
+                                <span class="stat-label">d'expérience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">⭐ 4.9</span>
+                                <span class="stat-label">Avis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="founder-social-premium">
+                            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com" target="_blank" class="social-icon tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://wa.me/212667772551" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom-premium">
+                <div class="footer-brand">
+                    <img src="images/logo.jpeg" alt="Imsfrane" class="footer-logo">
+                    <div class="footer-brand-text">
+                        <h3>Imsfrane Cathédrale</h3>
+                        <p>Montagne Sacrée de l'Atlas · 1 868m</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links-premium">
+                    <a href="index.html">Accueil</a>
+                    <a href="activities.html">Activités</a>
+                    <a href="memories.html">Mémoires</a>
+                    <a href="guide.html">Guide</a>
+                    <a href="booking.html">Réservation</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-contact-premium">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:0667772551">06 67 77 25 51</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/212667772551">WhatsApp</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Imsfrane Tilouguite, Azilal</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <span class="rib-text">RIB: 022780000760004191778274</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>© 2026 Imsfrane Cathédrale · Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('sliderTrack');
+            const prevBtn = document.getElementById('sliderPrev');
+            const nextBtn = document.getElementById('sliderNext');
+            
+            if (!track) return;
+            
+            // Create slider cards
+            const activities = [
+                { img: 'images/camping.jpeg', title: 'Camping sauvage', desc: 'Nuit sous les étoiles', price: '60 DH', link: 'activities.html#camping' },
+                { img: 'images/hiking.jpeg', title: 'Randonnée', desc: 'Sommet 1868m', price: '300 DH', link: 'activities.html#randonnee' },
+                { img: 'images/vtt.jpeg', title: 'VTT', desc: 'Double suspension', price: '150 DH', link: 'activities.html#vtt' },
+                { img: 'images/rafting.png', title: 'Rafting', desc: 'Oued Ahansal', price: '400 DH', link: 'activities.html#rafting' },
+                { img: 'images/farid.jpeg', title: 'Guide', desc: '8 ans d\'expérience', price: 'Inclus', link: 'guide.html' }
+            ];
+            
+            let html = '';
+            activities.forEach(act => {
+                html += `
+                    <div class="slider-card">
+                        <div class="slider-card-image">
+                            <img src="${act.img}" alt="${act.title}">
+                            <div class="slider-card-badge">${act.price}</div>
+                        </div>
+                        <div class="slider-card-content">
+                            <h3>${act.title}</h3>
+                            <p>${act.desc}</p>
+                            <div class="slider-card-price">${act.price}</div>
+                            <a href="${act.link}" class="btn btn-gold" style="width:100%; padding:12px;">Découvrir →</a>
+                        </div>
+                    </div>
+                `;
+            });
+            track.innerHTML = html;
+            
+            let pos = 0;
+            const cardWidth = 325;
+            
+            nextBtn.addEventListener('click', () => {
+                const max = -(activities.length * cardWidth - track.parentElement.offsetWidth + 80);
+                if (pos > max) {
+                    pos -= cardWidth;
+                    if (pos < max) pos = max;
+                    track.style.transform = `translateX(${pos}px)`;
+                }
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                if (pos < 0) {
+                    pos += cardWidth;
+                    if (pos > 0) pos = 0;
+                    track.style.transform = `translateX(${pos}px)`;
+                }
+            });
+        });
+        
+        // Search Popup
+        document.getElementById('searchToggle').addEventListener('click', function() {
+            document.getElementById('searchPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        document.getElementById('searchClose').addEventListener('click', function() {
+            document.getElementById('searchPopup').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Mobile Menu
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        document.getElementById('menuClose').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        document.querySelector('.menu-backdrop').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+    
+</body>
+</html>

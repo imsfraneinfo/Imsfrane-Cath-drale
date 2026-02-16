@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activités · Imsfrane Cathédrale</title>
+    
+    <!-- META TAGS -->
+    <meta name="description" content="Activités à Imsfrane Cathédrale : Camping sauvage, Randonnée du sommet 1868m, VTT, Rafting">
+    <meta name="keywords" content="Imsfrane, Cathédrale, randonnée, camping, VTT, rafting, Atlas">
+    <meta name="author" content="Imsfrane Cathédrale">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* ===== STYLES SPÉCIFIQUES ===== */
+        .camping-options {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .camping-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 10px;
+            border-bottom: 1px dashed rgba(198,164,63,0.3);
+            width: 100%;
+            box-sizing: border-box;
+            gap: 10px;
+        }
+        
+        .camping-option:last-child {
+            border-bottom: none;
+        }
+        
+        .option-name {
+            font-weight: 600;
+            color: #1A1F2C;
+            flex: 1;
+            font-size: 15px;
+            white-space: normal;
+            line-height: 1.4;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .option-name i {
+            color: #C6A43F;
+            margin-right: 10px;
+            width: 20px;
+            display: inline-block;
+        }
+        
+        .option-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #C6A43F;
+            white-space: nowrap;
+            text-align: right;
+            min-width: 85px;
+        }
+        
+        .option-price small {
+            font-size: 11px;
+            color: #5A5E6B;
+            font-weight: 400;
+            margin-left: 3px;
+        }
+        
+        .nature-info {
+            background: rgba(198,164,63,0.1);
+            border-left: 4px solid #C6A43F;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 14px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .parcours-card {
+            background: white;
+            border: 1px solid rgba(198,164,63,0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: all 0.3s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .parcours-card:hover {
+            border-color: #C6A43F;
+            box-shadow: 0 10px 30px rgba(198,164,63,0.1);
+        }
+        
+        .parcours-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #C6A43F;
+            flex-wrap: wrap;
+        }
+        
+        .parcours-title i {
+            font-size: 24px;
+        }
+        
+        .parcours-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        
+        .detail-item i {
+            color: #C6A43F;
+            width: 20px;
+            flex-shrink: 0;
+        }
+        
+        .visit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin: 10px 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .visit-item i {
+            color: #C6A43F;
+            font-size: 20px;
+            flex-shrink: 0;
+            width: 24px;
+        }
+        
+        .visit-item span {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .photo-spot {
+            background: #1A1F2C;
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .photo-spot i {
+            font-size: 30px;
+            color: #C6A43F;
+            flex-shrink: 0;
+        }
+        
+        .photo-spot div {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* ===== IMAGES SANS ESPACE BLANC ===== */
+        .activity-card .activity-media {
+            position: relative;
+            width: 100%;
+            height: auto !important;
+            min-height: 0 !important;
+            max-height: none !important;
+            aspect-ratio: unset !important;
+            border: 4px solid #C6A43F;
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0 !important;
+            background: transparent !important;
+            box-shadow: 0 5px 15px rgba(198,164,63,0.2);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .activity-card .activity-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            margin: 0;
+            padding: 0;
+        }
+
+        .activity-card:hover .activity-media img {
+            transform: scale(1.05);
+        }
+
+        .activity-card:hover .activity-media {
+            border-color: #9E832B;
+            box-shadow: 0 10px 25px rgba(198,164,63,0.3);
+        }
+
+        .activity-card .activity-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #C6A43F;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .activity-card .activity-badge.popular {
+            background: #E74C3C;
+        }
+
+        .activity-card .activity-badge.new {
+            background: #27AE60;
+        }
+
+        .activity-card .activity-badge.adventure {
+            background: #3498DB;
+        }
+
+        /* ===== تحسين عرض المحتوى ===== */
+        .activity-card {
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .activity-content {
+            padding: 25px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .activity-description {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* تحسين عرض repas */
+        .repas-grid {
+            display: grid;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .repas-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(198,164,63,0.2);
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .repas-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .repas-label i {
+            color: #C6A43F;
+            width: 20px;
+            flex-shrink: 0;
+        }
+
+        .repas-price {
+            font-weight: 600;
+            color: #C6A43F;
+            white-space: nowrap;
+        }
+
+        /* تحسين عرض الأسعار */
+        .activity-price {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: #5A5E6B;
+            white-space: nowrap;
+        }
+
+        .price-value {
+            font-size: 28px;
+            font-weight: 900;
+            color: #C6A43F;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .price-unit {
+            font-size: 14px;
+            color: #5A5E6B;
+            white-space: nowrap;
+        }
+
+        .activity-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .activity-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .activity-actions .btn {
+            padding: 10px 16px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        /* تحسينات إضافية */
+        .btn-phone, .btn-wa {
+            min-width: 45px;
+            justify-content: center;
+        }
+
+        /* ===== BOOKING MODAL ===== */
+        .booking-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .booking-modal.active {
+            display: flex;
+        }
+
+        .booking-modal-content {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        .booking-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #C6A43F, #9E832B);
+            color: white;
+        }
+
+        .booking-modal-header h2 {
+            color: white;
+            font-size: 22px;
+            margin: 0;
+        }
+
+        .booking-modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .booking-modal-close:hover {
+            background: white;
+            color: #C6A43F;
+            transform: rotate(90deg);
+        }
+
+        .booking-modal-body {
+            padding: 25px;
+        }
+
+        .booking-field {
+            margin-bottom: 20px;
+        }
+
+        .booking-field label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1A1F2C;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .booking-field label i {
+            color: #C6A43F;
+            margin-right: 8px;
+        }
+
+        .booking-field input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .booking-field input:focus {
+            border-color: #C6A43F;
+            outline: none;
+        }
+
+        .booking-field input[readonly] {
+            background: #f8f9fa;
+        }
+
+        .booking-counter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .booking-counter button {
+            width: 45px;
+            height: 45px;
+            background: #f8f9fa;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            color: #1A1F2C;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .booking-counter button:hover {
+            background: #C6A43F;
+            border-color: #C6A43F;
+            color: white;
+        }
+
+        .booking-counter input {
+            text-align: center;
+            font-weight: 600;
+            width: 80px;
+        }
+
+        .booking-price {
+            background: linear-gradient(135deg, rgba(198,164,63,0.1), rgba(198,164,63,0.05));
+            border: 2px dashed #C6A43F;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .booking-price span:last-child {
+            color: #C6A43F;
+            font-size: 28px;
+        }
+
+        .booking-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .booking-checkbox input {
+            width: 20px;
+            height: 20px;
+            accent-color: #C6A43F;
+        }
+
+        .booking-rib {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 4px solid #C6A43F;
+        }
+
+        .booking-rib i {
+            font-size: 30px;
+            color: #C6A43F;
+        }
+
+        .booking-rib div {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .booking-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .booking-buttons .btn {
+            flex: 1;
+            padding: 15px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .activity-card .activity-media {
+                max-width: 100%;
+            }
+            
+            .parcours-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .activity-content {
+                padding: 20px;
+            }
+            
+            .camping-option {
+                padding: 10px 5px;
+            }
+            
+            .option-name {
+                font-size: 14px;
+            }
+            
+            .option-price {
+                font-size: 16px;
+                min-width: 75px;
+            }
+            
+            .price-value {
+                font-size: 24px;
+            }
+            
+            .activity-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .activity-actions .btn {
+                flex: 1;
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            .parcours-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .activity-card .activity-media {
+                border-width: 3px;
+            }
+            
+            .photo-spot {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .camping-option {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .option-name {
+                width: 100%;
+            }
+            
+            .option-price {
+                align-self: flex-start;
+                margin-left: 30px;
+            }
+            
+            .activity-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .activity-actions {
+                width: 100%;
+            }
+            
+            .repas-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .repas-price {
+                align-self: flex-start;
+                margin-left: 28px;
+            }
+            
+            .parcours-title {
+                font-size: 16px;
+            }
+            
+            .visit-item {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .activity-content {
+                padding: 15px;
+            }
+            
+            .option-name {
+                font-size: 13px;
+            }
+            
+            .option-price {
+                font-size: 15px;
+                min-width: 70px;
+            }
+            
+            .btn {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .price-value {
+                font-size: 22px;
+            }
+            
+            .price-label, .price-unit {
+                font-size: 12px;
+            }
+            
+            .repas-label {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/212667772551" class="floating-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:0667772551" class="floating-btn phone"><i class="fas fa-phone-alt"></i></a>
+        <a href="booking.html" class="floating-btn booking"><i class="fas fa-calendar-check"></i></a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.jpeg" alt="Imsfrane Cathédrale">
+                    <span class="logo-title">Imsfrane Cathédrale</span>
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="index.html">Accueil</a>
+                    <a href="activities.html" class="active">Activités</a>
+                    <a href="memories.html">Mémoires</a>
+                    <a href="guide.html">Guide</a>
+                    <a href="booking.html">Réservation</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="tel:0667772551" class="nav-phone"><i class="fas fa-phone-alt"></i></a>
+                    <button class="search-toggle" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Popup -->
+    <div class="search-popup" id="searchPopup">
+        <div class="search-popup-content">
+            <div class="search-popup-header">
+                <h3>Rechercher une activité</h3>
+                <button class="search-popup-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-popup-body">
+                <input type="text" class="search-popup-input" id="popupSearch" placeholder="Camping, Rafting, VTT, Randonnée...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-backdrop"></div>
+        <div class="menu-panel">
+            <div class="menu-header">
+                <img src="images/logo.jpeg" alt="Imsfrane">
+                <button class="menu-close" id="menuClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="menu-content">
+                <a href="index.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-home"></i></div>
+                    <span>Accueil</span>
+                </a>
+                <a href="activities.html" class="menu-item active">
+                    <div class="item-icon"><i class="fas fa-hiking"></i></div>
+                    <span>Activités</span>
+                </a>
+                <a href="memories.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-camera-retro"></i></div>
+                    <span>Mémoires</span>
+                </a>
+                <a href="guide.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <span>Guide</span>
+                </a>
+                <a href="booking.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-calendar-check"></i></div>
+                    <span>Réservation</span>
+                </a>
+                <a href="contact.html" class="menu-item">
+                    <div class="item-icon"><i class="fas fa-envelope"></i></div>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="images/hero.jpeg" alt="Imsfrane Cathédrale">
+            <div class="page-header-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="page-header-content">
+                <span class="page-header-badge">ACTIVITÉS</span>
+                <h1>Nos aventures</h1>
+                <p>Camping · Randonnée · VTT · Rafting</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities">
+        <div class="container">
+            <div class="activities-grid">
+                
+                <!-- CAMPING SAUVAGE -->
+                <div class="activity-card" id="camping">
+                    <div class="activity-media">
+                        <img src="images/camping.jpeg" alt="Camping sauvage">
+                        <div class="activity-badge">⭐ Coup de cœur</div>
+                    </div>
+                    
+                    <div class="activity-content">
+                        <h2><i class="fas fa-campground"></i> Camping sauvage</h2>
+                        
+                        <p class="activity-description">
+                            ⛺ Expérience authentique en pleine nature. Tente traditionnelle mfercha 
+                            (matelas, couverture, mkhdda).
+                        </p>
+                        
+                        <div class="nature-info">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Nature sauvage :</strong> Pas de douche, pas de toilettes. 
+                            Expérience 100% nature.
+                        </div>
+                        
+                        <div class="camping-options">
+                            <h3 style="margin-bottom: 15px;"><i class="fas fa-tent"></i> Tarifs camping</h3>
+                            
+                            <div class="camping-option">
+                                <span class="option-name"><i class="fas fa-tent"></i> Tente (1 personne)</span>
+                                <span class="option-price">60 DH <small>/nuit</small></span>
+                            </div>
+                            
+                            <div class="camping-option">
+                                <span class="option-name"><i class="fas fa-tent"></i> Tente (2 personnes)</span>
+                                <span class="option-price">100 DH <small>/nuit</small></span>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 25px 0; padding: 20px; background: rgba(198,164,63,0.05); border-radius: 16px;">
+                            <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: #C6A43F;">
+                                <i class="fas fa-utensils"></i> Repas sur commande
+                            </h3>
+                            
+                            <div style="display: grid; gap: 12px;">
+                                <div class="repas-item">
+                                    <span class="repas-label"><i class="fas fa-coffee"></i> Petit-déjeuner</span>
+                                    <span class="repas-price">40 DH</span>
+                                </div>
+                                <div class="repas-item">
+                                    <span class="repas-label"><i class="fas fa-bread-slice"></i> Déjeuner</span>
+                                    <span class="repas-price">50 DH</span>
+                                </div>
+                                <div class="repas-item">
+                                    <span class="repas-label"><i class="fas fa-moon"></i> Dîner</span>
+                                    <span class="repas-price">50 DH</span>
+                                </div>
+                                <div class="repas-item">
+                                    <span class="repas-label"><i class="fas fa-mug-hot"></i> Thé à la menthe</span>
+                                    <span class="repas-price" style="color: #27AE60;">Offert</span>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, rgba(198,164,63,0.1), rgba(198,164,63,0.05)); border-radius: 12px; border: 2px dashed #C6A43F;">
+                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                                    <i class="fas fa-crown" style="color: #C6A43F; font-size: 24px;"></i>
+                                    <h4 style="color: #C6A43F; margin: 0;">Service spécial</h4>
+                                </div>
+                                <p style="color: #1A1F2C; margin-bottom: 15px;">
+                                    Vous avez une envie particulière ? Nous pouvons l'acheter et la préparer pour vous !
+                                </p>
+                                <div style="background: white; border-radius: 10px; padding: 15px; text-align: center;">
+                                    <i class="fas fa-phone-alt" style="color: #C6A43F; margin-right: 8px;"></i>
+                                    <strong>Contactez-nous pour votre demande</strong>
+                                </div>
+                            </div>
+                            
+                            <p style="margin-top: 15px; font-size: 12px; color: #5A5E6B; text-align: center;">
+                                <i class="fas fa-clock"></i> Commander au moins 24h à l'avance
+                            </p>
+                        </div>
+                        
+                        <div class="activity-footer">
+                            <div class="activity-price">
+                                <span class="price-label">Camping à partir de</span>
+                                <span class="price-value">60 DH</span>
+                                <span class="price-unit">/nuit</span>
+                            </div>
+                            
+                            <div class="activity-actions">
+                                <button onclick="openBooking('camping', 60, 'Camping sauvage')" class="btn btn-gold">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                                <a href="tel:0667772551" class="btn btn-phone">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
+                                <a href="https://wa.me/212667772551" class="btn btn-wa">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <!-- RANDONNÉE - PARCOURS 1 (Sommet) -->
+<div class="activity-card" id="randonnee1">
+    <div class="activity-media">
+        <img src="images/sommet1.jpeg" alt="Sommet Imsfrane 1868m">
+        <div class="activity-badge popular">🔥 Populaire</div>
+    </div>
+    
+    <div class="activity-content">
+        <h2><i class="fas fa-mountain"></i> Parcours 1 · Sommet (1 868m)</h2>
+        
+        <p class="activity-description">
+            🥾 Accompagnement par guide local. Départ possible de votre hébergement.
+        </p>
+        
+        <div class="parcours-card">
+            <div class="parcours-details">
+                <div class="detail-item"><i class="fas fa-clock"></i> 5-7 heures</div>
+                <div class="detail-item"><i class="fas fa-chart-line"></i> Moyen</div>
+                <div class="detail-item"><i class="fas fa-mountain"></i> 668m D+</div>
+            </div>
+            
+            <p><i class="fas fa-info-circle"></i> Départ possible de votre hébergement</p>
+            
+            <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700;">Tarif guide :</span>
+                <span style="font-size: 24px; color: #C6A43F; font-weight: 700;">300 DH</span>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <button onclick="openBooking('randonnee1', 300, 'Randonnée - Sommet')" class="btn btn-gold" style="width: 100%;">
+                    <i class="fas fa-calendar-check"></i> Réserver ce parcours
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RANDONNÉE - PARCOURS 2 (Gorges & Cascades) avec deux images -->
+<div class="activity-card" id="randonnee2">
+    <div class="activity-media" style="position: relative;">
+        <!-- Image principale -->
+        <img src="images/gorge.jpeg" alt="Gorges d'Ahansal" style="width: 100%; height: 100%; object-fit: cover;">
+        
+        <!-- Miniature en bas à droite -->
+        <div style="position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 10px; overflow: hidden; border: 3px solid #C6A43F; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+            <img src="images/cascade.jpeg" alt="Cascade" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <div class="activity-badge">🌊 Gorges</div>
+    </div>
+    
+    <div class="activity-content">
+        <h2><i class="fas fa-water"></i> Parcours 2 · Gorges & Cascades</h2>
+        
+        <p class="activity-description">
+            🥾 Visite des gorges d'Ahansal, cascades, moulin ancien et camion mythique.
+        </p>
+        
+        <div class="parcours-card">
+            <div class="parcours-details">
+                <div class="detail-item"><i class="fas fa-clock"></i> 3-4 heures</div>
+                <div class="detail-item"><i class="fas fa-chart-line"></i> Facile</div>
+                <div class="detail-item"><i class="fas fa-route"></i> 8 km</div>
+            </div>
+            
+            <div class="visit-item">
+                <i class="fas fa-tree"></i>
+                <span><strong>Ancien moulin</strong> traditionnel</span>
+            </div>
+            
+            <div class="visit-item">
+                <i class="fas fa-truck"></i>
+                <span><strong>Camion historique</strong> avec vue sur Imsfrane</span>
+            </div>
+            
+            <div class="photo-spot">
+                <i class="fas fa-camera-retro"></i>
+                <div>
+                    <strong>Spot photo mythique</strong>
+                    <p>Le camion avec le sommet en arrière-plan</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700;">Tarif guide :</span>
+                <span style="font-size: 24px; color: #C6A43F; font-weight: 700;">200 DH</span>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <button onclick="openBooking('randonnee2', 200, 'Randonnée - Gorges')" class="btn btn-gold" style="width: 100%;">
+                    <i class="fas fa-calendar-check"></i> Réserver ce parcours
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RANDONNÉE - PARCOURS 3 (Grand Tour) -->
+<div class="activity-card" id="randonnee3">
+    <div class="activity-media">
+        <img src="images/sommet.jpeg" alt="Grand Tour Imsfrane">
+        <div class="activity-badge" style="background: #C6A43F;">👑 Grand Tour</div>
+    </div>
+    
+    <div class="activity-content">
+        <h2><i class="fas fa-crown"></i> Parcours 3 · Le Grand Tour</h2>
+        
+        <p class="activity-description">
+            🥾 Parcours 1 + Parcours 2 en une journée. Pour les passionnés !
+        </p>
+        
+        <div class="parcours-card" style="border: 2px solid #C6A43F;">
+            <div class="parcours-details">
+                <div class="detail-item"><i class="fas fa-clock"></i> 8-10 heures</div>
+                <div class="detail-item"><i class="fas fa-chart-line"></i> Soutenu</div>
+                <div class="detail-item"><i class="fas fa-route"></i> 24 km</div>
+            </div>
+            
+            <p><i class="fas fa-exclamation-circle"></i> Parcours 1 + 2 en une journée</p>
+            
+            <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700;">Tarif guide :</span>
+                <span style="font-size: 28px; color: #C6A43F; font-weight: 700;">400 DH</span>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <button onclick="openBooking('randonnee3', 400, 'Randonnée - Grand Tour')" class="btn btn-gold" style="width: 100%;">
+                    <i class="fas fa-calendar-check"></i> Réserver ce parcours
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+                
+                <!-- VTT -->
+                <div class="activity-card" id="vtt">
+                    <div class="activity-media">
+                        <img src="images/vtt.jpeg" alt="VTT">
+                        <div class="activity-badge adventure">🚵 VTT</div>
+                    </div>
+                    
+                    <div class="activity-content">
+                        <h2><i class="fas fa-bicycle"></i> VTT Exploration</h2>
+                        
+                        <p class="activity-description">Location de VTT tout suspendu pour explorer les sentiers de l'Atlas.</p>
+                        
+                        <div class="activity-specs">
+                            <div class="spec"><span class="spec-label">VTT</span><span class="spec-value">150 DH</span></div>
+                            <div class="spec"><span class="spec-label">Durée</span><span class="spec-value">Journée</span></div>
+                        </div>
+                        
+                        <div class="activity-details">
+                            <h4><i class="fas fa-check-circle"></i> Inclus</h4>
+                            <ul class="details-list">
+                                <li>VTT double suspension</li>
+                                <li>Casque</li>
+                                <li>Accompagnement</li>
+                                <li>Photos et vidéos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-footer">
+                            <div class="activity-price">
+                                <span class="price-value">150 DH</span>
+                                <span class="price-unit">/jour</span>
+                            </div>
+                            
+                            <div class="activity-actions">
+                                <button onclick="openBooking('vtt', 150, 'VTT')" class="btn btn-gold">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                                <a href="tel:0667772551" class="btn btn-phone">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
+                                <a href="https://wa.me/212667772551" class="btn btn-wa">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RAFTING -->
+                <div class="activity-card" id="rafting">
+                    <div class="activity-media">
+                        <img src="images/rafting.png" alt="Rafting">
+                        <div class="activity-badge new">✨ Rafting</div>
+                    </div>
+                    
+                    <div class="activity-content">
+                        <h2><i class="fas fa-water"></i> Rafting</h2>
+                        
+                        <p class="activity-description">Descente de l'Oued Ahansal en rafting.</p>
+                        
+                        <div class="parcours-card">
+                            <h3><i class="fas fa-water"></i> Petite descente (12 km)</h3>
+                            <p>1 journée · 400 DH/pers</p>
+                            <p style="color: #27AE60;"><i class="fas fa-gift"></i> Groupe 20+ : 350 DH/pers</p>
+                            <div style="margin-top: 15px;">
+                                <button onclick="openBooking('rafting12', 400, 'Rafting 12km')" class="btn btn-gold" style="width: 100%;">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="parcours-card">
+                            <h3><i class="fas fa-campground"></i> Grande descente (50 km)</h3>
+                            <p>2 jours / 1 nuit · Bivouac inclus · Sur devis</p>
+                            <div style="margin-top: 15px;">
+                                <button onclick="openBooking('rafting50', 0, 'Rafting 50km')" class="btn btn-gold" style="width: 100%;">
+                                    <i class="fas fa-calendar-check"></i> Demander un devis
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="quick-contact-content">
+                <span class="section-badge">BESOIN D'AIDE ?</span>
+                <h2>Une question ? Une réservation ?</h2>
+                <p>Notre équipe est disponible 7j/7</p>
+                <div class="quick-contact-buttons">
+                    <a href="tel:0667772551" class="btn btn-phone-large">
+                        <i class="fas fa-phone-alt"></i> 06 67 77 25 51
+                    </a>
+                    <a href="https://wa.me/212667772551" class="btn btn-wa-large">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-modal-content">
+            <div class="booking-modal-header">
+                <h2><i class="fas fa-calendar-check"></i> Réserver</h2>
+                <button class="booking-modal-close" onclick="closeBooking()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="booking-modal-body">
+                <form id="bookingForm">
+                    <div class="booking-field">
+                        <label><i class="fas fa-hiking"></i> Activité</label>
+                        <input type="text" id="bookingActivity" readonly>
+                    </div>
+                    
+                    <div class="booking-field">
+                        <label><i class="fas fa-calendar"></i> Date</label>
+                        <input type="date" id="bookingDate" required>
+                    </div>
+                    
+                    <div class="booking-field">
+                        <label><i class="fas fa-users"></i> Personnes</label>
+                        <div class="booking-counter">
+                            <button type="button" onclick="updatePeople(-1)">-</button>
+                            <input type="number" id="bookingPeople" value="1" min="1" readonly>
+                            <button type="button" onclick="updatePeople(1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Options Camping -->
+                    <div id="campingOptions" style="display: none;">
+                        <h4 style="margin: 20px 0 10px; color: #C6A43F;">🛖 Type de tente</h4>
+                        
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                            <label style="flex: 1; padding: 12px; border: 2px solid #f0f0f0; border-radius: 10px; text-align: center; cursor: pointer; background: #C6A43F; color: white;" onclick="selectTente(60)" id="tente1">
+                                <i class="fas fa-tent" style="display: block; margin-bottom: 5px;"></i>
+                                <strong>1 personne</strong><br>
+                                <span>60 DH</span>
+                            </label>
+                            
+                            <label style="flex: 1; padding: 12px; border: 2px solid #f0f0f0; border-radius: 10px; text-align: center; cursor: pointer; background: #f8f9fa;" onclick="selectTente(100)" id="tente2">
+                                <i class="fas fa-tent" style="display: block; margin-bottom: 5px; color: #C6A43F;"></i>
+                                <strong>2 personnes</strong><br>
+                                <span style="color: #C6A43F;">100 DH</span>
+                            </label>
+                        </div>
+                        
+                        <h4 style="margin: 20px 0 10px; color: #C6A43F;">🍽️ Options repas</h4>
+                        
+                        <div class="booking-checkbox">
+                            <input type="checkbox" id="breakfast" onchange="updateTotal()">
+                            <label>Petit-déjeuner (+40 DH/pers)</label>
+                        </div>
+                        <div class="booking-checkbox">
+                            <input type="checkbox" id="lunch" onchange="updateTotal()">
+                            <label>Déjeuner (+50 DH/pers)</label>
+                        </div>
+                        <div class="booking-checkbox">
+                            <input type="checkbox" id="dinner" onchange="updateTotal()">
+                            <label>Dîner (+50 DH/pers)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-price">
+                        <span>Total :</span>
+                        <span id="bookingTotal">0 DH</span>
+                    </div>
+                    
+                    <div class="booking-field">
+                        <label><i class="fas fa-user"></i> Nom</label>
+                        <input type="text" id="bookingName" required>
+                    </div>
+                    
+                    <div class="booking-field">
+                        <label><i class="fas fa-phone"></i> Téléphone</label>
+                        <input type="tel" id="bookingPhone" required>
+                    </div>
+                    
+                    <div class="booking-rib">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <strong>RIB:</strong> 022780000760004191778274<br>
+                            Titulaire: FARID LAYDI
+                        </div>
+                    </div>
+                    
+                    <div class="booking-buttons">
+                        <button type="button" onclick="sendBooking()" class="btn btn-gold">
+                            <i class="fab fa-whatsapp"></i> Confirmer
+                        </button>
+                        <button type="button" onclick="closeBooking()" class="btn btn-outline">
+                            Annuler
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-founder">
+                <div class="founder-highlight">
+                    <div class="founder-image-large">
+                        <img src="images/logo.jpeg" alt="Imsfrane Cathédrale">
+                    </div>
+                    <div class="founder-info-premium">
+                        <span class="founder-tag">À PROPOS</span>
+                        <h2 class="founder-name">Imsfrane Cathédrale</h2>
+                        <p class="founder-desc">
+                            Découvrez la magie de l'Atlas à travers des expériences uniques et authentiques.
+                            Notre équipe de guides locaux vous accompagne pour des aventures inoubliables.
+                        </p>
+                        
+                        <div class="founder-stats-premium">
+                            <div class="stat-item">
+                                <span class="stat-number">+500</span>
+                                <span class="stat-label">Aventuriers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">8 ans</span>
+                                <span class="stat-label">d'expérience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">⭐ 4.9</span>
+                                <span class="stat-label">Avis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="founder-social-premium">
+                            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com" target="_blank" class="social-icon tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://wa.me/212667772551" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom-premium">
+                <div class="footer-brand">
+                    <img src="images/logo.jpeg" alt="Imsfrane" class="footer-logo">
+                    <div class="footer-brand-text">
+                        <h3>Imsfrane Cathédrale</h3>
+                        <p>Montagne Sacrée de l'Atlas · 1 868m</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links-premium">
+                    <a href="index.html">Accueil</a>
+                    <a href="activities.html">Activités</a>
+                    <a href="memories.html">Mémoires</a>
+                    <a href="guide.html">Guide</a>
+                    <a href="booking.html">Réservation</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-contact-premium">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:0667772551">06 67 77 25 51</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/212667772551">WhatsApp</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Imsfrane Tilouguite, Azilal</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <span class="rib-text">RIB: 022780000760004191778274</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>© 2026 Imsfrane Cathédrale · Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Booking System
+        let currentActivity = '';
+        let basePrice = 0;
+        let tentePrice = 60;
+
+        function selectTente(price) {
+            tentePrice = price;
+            if (price === 60) {
+                document.getElementById('tente1').style.background = '#C6A43F';
+                document.getElementById('tente1').style.color = 'white';
+                document.getElementById('tente2').style.background = '#f8f9fa';
+                document.getElementById('tente2').style.color = '#1A1F2C';
+            } else {
+                document.getElementById('tente2').style.background = '#C6A43F';
+                document.getElementById('tente2').style.color = 'white';
+                document.getElementById('tente1').style.background = '#f8f9fa';
+                document.getElementById('tente1').style.color = '#1A1F2C';
+            }
+            updateTotal();
+        }
+
+        function openBooking(activity, price, name) {
+            currentActivity = activity;
+            basePrice = price;
+            
+            document.getElementById('bookingActivity').value = name;
+            
+            if (activity === 'camping') {
+                document.getElementById('campingOptions').style.display = 'block';
+                tentePrice = 60;
+                document.getElementById('tente1').style.background = '#C6A43F';
+                document.getElementById('tente1').style.color = 'white';
+                document.getElementById('tente2').style.background = '#f8f9fa';
+                document.getElementById('tente2').style.color = '#1A1F2C';
+                document.getElementById('breakfast').checked = false;
+                document.getElementById('lunch').checked = false;
+                document.getElementById('dinner').checked = false;
+            } else {
+                document.getElementById('campingOptions').style.display = 'none';
+            }
+            
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('bookingDate').min = today;
+            document.getElementById('bookingDate').value = today;
+            
+            document.getElementById('bookingPeople').value = 1;
+            updateTotal();
+            
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updatePeople(change) {
+            const input = document.getElementById('bookingPeople');
+            let value = parseInt(input.value) + change;
+            if (value < 1) value = 1;
+            if (value > 50) value = 50;
+            input.value = value;
+            updateTotal();
+        }
+
+        function updateTotal() {
+            const people = parseInt(document.getElementById('bookingPeople').value);
+            let total = basePrice;
+
+            if (currentActivity === 'randonnee1' || 
+                currentActivity === 'randonnee2' || 
+                currentActivity === 'randonnee3') {
+                
+                if (people >= 40) {
+                    total = basePrice * 2;
+                } else {
+                    total = basePrice;
+                }
+            }
+            else if (currentActivity === 'camping') {
+                total = tentePrice;
+                
+                if (document.getElementById('breakfast')?.checked) total += 40 * people;
+                if (document.getElementById('lunch')?.checked) total += 50 * people;
+                if (document.getElementById('dinner')?.checked) total += 50 * people;
+            }
+            else if (currentActivity === 'vtt') {
+                total = basePrice * people;
+            }
+            else if (currentActivity === 'rafting12') {
+                if (people >= 20) {
+                    total = 350 * people;
+                } else {
+                    total = basePrice * people;
+                }
+            }
+            else if (currentActivity === 'rafting50') {
+                total = 0;
+            }
+            else {
+                total = basePrice * people;
+            }
+
+            document.getElementById('bookingTotal').textContent = 
+                currentActivity === 'rafting50' ? 'Sur devis' : total + ' DH';
+        }
+
+        function sendBooking() {
+            const activity = document.getElementById('bookingActivity').value;
+            const date = document.getElementById('bookingDate').value;
+            const people = document.getElementById('bookingPeople').value;
+            const total = document.getElementById('bookingTotal').textContent;
+            const name = document.getElementById('bookingName').value;
+            const phone = document.getElementById('bookingPhone').value;
+            
+            if (!name || !phone) {
+                alert('Veuillez remplir votre nom et téléphone');
+                return;
+            }
+            
+            let msg = `*NOUVELLE RÉSERVATION*\n\n`;
+            msg += `🏔️ *Activité:* ${activity}\n`;
+            msg += `📅 *Date:* ${date}\n`;
+            msg += `👥 *Personnes:* ${people}\n`;
+            msg += `💰 *Total:* ${total}\n`;
+            msg += `👤 *Nom:* ${name}\n`;
+            msg += `📞 *Téléphone:* ${phone}\n\n`;
+            msg += `*RIB:* 022780000760004191778274\n`;
+            msg += `Titulaire: FARID LAYDI`;
+            
+            window.open(`https://wa.me/212667772551?text=${encodeURIComponent(msg)}`, '_blank');
+            closeBooking();
+        }
+
+        // Search Popup
+        document.getElementById('searchToggle').addEventListener('click', function() {
+            document.getElementById('searchPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        document.getElementById('searchClose').addEventListener('click', function() {
+            document.getElementById('searchPopup').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Mobile Menu
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        document.getElementById('menuClose').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        document.querySelector('.menu-backdrop').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+</body>
+</html>
